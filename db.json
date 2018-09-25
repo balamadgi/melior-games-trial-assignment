@@ -63,6 +63,30 @@
       "cityId": 4,
       "companyId": 12,
       "id": 5
+    },
+    {
+      "author": ",msfb",
+      "title": "dgd",
+      "isbn": "232",
+      "pages": "1",
+      "description": ";'ldsmf,msd",
+      "price": "10",
+      "countryId": 1,
+      "cityId": 1,
+      "companyId": 1,
+      "id": 6
+    },
+    {
+      "author": "jhl;",
+      "title": "sdfsfssfsf",
+      "isbn": "232323",
+      "pages": "1231",
+      "description": "123asda",
+      "price": "0",
+      "countryId": 1,
+      "cityId": 1,
+      "companyId": 1,
+      "id": 7
     }
   ],
   "formats": [

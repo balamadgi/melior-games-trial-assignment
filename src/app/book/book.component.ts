@@ -39,7 +39,6 @@ export class BookComponent implements OnInit {
 		private dataService: DataService) { }
 
 	ngOnInit() {
-		console.log(this.dataService.get('books'));
 		forkJoin(
 		this.formatService.getFormat(),
 		this.countryService.getCountries(),
@@ -82,13 +81,15 @@ export class BookComponent implements OnInit {
 			this.countries.find(c => c.name === country).id,
 			this.cities.find(c => c.name === city).id,
 			this.companies.find(c => c.name === company).id);
+
 	this.bookService.addBook(this.book).subscribe();
+
 	this.dataService.set(this.book, 'books');
 
-	console.log(this.dataService.get('books'));
+	console.log(this.dataService.books);
 
 		
 }
 
-// , 
+
 }

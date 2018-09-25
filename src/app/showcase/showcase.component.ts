@@ -20,11 +20,11 @@ import { FormatService } from '../common/services/format.service';
 })
 
 export class ShowcaseComponent implements OnInit {
-	private books: Book[] = [];
-	private countries: Country[] = [];
-	private cities: City[] = [];
-	private companies: Company[] = [];
-	private formats: Format[] = [];
+	public books: Book[] = [];
+	public countries: Country[] = [];
+	public cities: City[] = [];
+	public companies: Company[] = [];
+	public formats: Format[] = [];
 
 	isLoad = false;
 
@@ -72,15 +72,17 @@ export class ShowcaseComponent implements OnInit {
 							book.formatName = this.formats[d].name;
 					}
 				});
-			
-			this.dataService.set(this.books, 'books');
-			this.dataService.set(this.countries, 'countries');
-			this.dataService.set(this.cities, 'cities');
-			this.dataService.set(this.companies, 'companies');
-			this.dataService.set(this.formats, 'formats');	
+
+				this.dataService.books = this.books;
+console.log(this.dataService.books);
+			// this.dataService.set(this.books, 'books');
+			// this.dataService.set(this.countries, 'countries');
+			// this.dataService.set(this.cities, 'cities');
+			// this.dataService.set(this.companies, 'companies');
+			// this.dataService.set(this.formats, 'formats');	
 			})
 			
-			console.log(this.dataService.books);
+		
 	}
 
 }

@@ -14,19 +14,7 @@ import { Format } from './common/models/format.model';
 @Injectable()
 export class DataService {
 
-	public books: Book[] = [];
-	private countries: Country[] = [];
-	private cities: City[] = [];
-	private companies: Company[] = [];
-	private formats: Format[] = [];
-	isLoad = false;
-
-	constructor(private bookService: BookService,
-		private countryService: CountryService,
-		private cityService: CityService,
-		private companyService: CompanyService,
-		private formatService: FormatService) { }
-
+	 public books: Book[] = [];
 
 	public getBookById(id) {
 		for (let i = 0; i < this.books.length; i++) {
@@ -39,52 +27,9 @@ export class DataService {
 		switch (when) {
 			case 'books':
 				{
-					this.books.slice(what);
+					this.books.push(what);
 				}
 				break;
-			case 'countries':
-				{
-
-					this.countries.push(what);
-				}
-				break;
-			case 'cities':
-				{
-
-					this.cities.push(what);
-				}
-				break;
-			case 'companies':
-				{
-
-					this.companies.push(what);
-				}
-				break;
-			case 'formats':
-				{
-
-					this.formats.push(what);
-				}
-				break;
+			}
 		}
-	}
-	public get(what: string) {
-		switch (what) {
-			case 'books':
-				return this.books;
-
-			case 'countries':
-				return this.countries;
-
-			case 'cities':
-				return this.cities;
-
-			case 'companies':
-				return this.companies;
-
-			case 'formats':
-				return this.formats;
-		}
-	}
-
 }

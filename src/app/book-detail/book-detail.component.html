@@ -1,7 +1,7 @@
 <div *ngIf="!isLoad">Loading... </div>
 <div *ngIf="isLoad">
 <div class="form-wrapper">
-  <form>
+
     <h3 class="mb-4">Book #{{bookId}} Info </h3>
 
     <div class="form-group">
@@ -64,7 +64,7 @@
       <input class="form-control" id="company" value="{{book.companyName}}" readonly="readonly">
          </div>
 
-    <button type="submit" class="btn btn-primary mt-4" [routerLink]="'**'">Back to the books list</button>
-  </form>
+    <button type="button" class="btn btn-primary mt-4 clickable" [routerLink]="'**'">Back to the books list</button>
+ 
 </div>
 </div>

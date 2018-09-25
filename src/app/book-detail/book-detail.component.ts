@@ -19,13 +19,11 @@ export class BookDetailComponent implements OnInit {
 	constructor(private route: ActivatedRoute,
 		private dataService: DataService) { }
 
-	ngOnInit() {
-		
+	ngOnInit() {		
 		this.route.params.pipe()
 			.subscribe((params: Params) => {
 				this.bookId = +params['id'];
 			});
-
 		this.book = this.dataService.getBookById(this.bookId)
 		console.log(this.book);
 		this.isLoad = true;

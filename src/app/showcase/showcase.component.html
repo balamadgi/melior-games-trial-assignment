@@ -17,7 +17,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let e of books ; let index = index"  class="clickable"
+				<tr *ngFor="let e of books; let index = index"  class="clickable"
 				[routerLink]="['/book', e.id]">
 					<th scope="row">{{index + 1}}</th>
 					<td>{{e.author}}</td>
@@ -27,7 +27,6 @@
 					<td>{{e.cityName}}</td>
 					<td>{{e.companyName}}</td>
 					<td>{{e.price}}</td>
-
 				</tr>
 			</tbody>
 		</table>
