@@ -1,0 +1,70 @@
+<div *ngIf="!isLoad">Loading... </div>
+<div *ngIf="isLoad">
+<div class="form-wrapper">
+  <form>
+    <h3 class="mb-4">Book #{{bookId}} Info </h3>
+
+    <div class="form-group">
+      <label for="author">Author</label>
+			<input class="form-control" id="author" 
+			value="{{book.author}}" readonly="readonly">			
+		</div>
+
+    <div class="form-group">
+      <label for="title">Title</label>
+			<input class="form-control" id="title" value="{{book.title}}" readonly="readonly">
+				</div>
+		
+
+    <div class="form-group">
+      <label for="isbn">ISBN</label>
+			<input class="form-control" id="isbn" value="{{book.isbn}}" readonly="readonly">
+			    </div>
+
+    <div class="form-group">
+      <label for="pages">Number of Pages</label>
+			<input class="form-control" id="pages" value="{{book.pages}}" readonly="readonly">
+			
+    </div>
+
+    <div class="form-group">
+      <label for="format">Format</label>
+      <input class="form-control" id="format" value="{{book.formatName}}" readonly="readonly">
+       
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" rows="3" value="{{book.description}}" readonly="readonly"></textarea>
+			
+		</div>
+
+    <div class="form-group" >
+      <label for="price">Price</label>
+			<input class="form-control" id="price" value="{{book.price}}" readonly="readonly">
+			
+    </div>
+
+    <hr class="m-1 mb-5 mt-5">
+
+    <h3 class="mb-4">Publisher Info</h3>
+
+    <div class="form-group">
+      <label for="country">Country</label>
+      <input class="form-control" id="country" value="{{book.countryName}}" readonly="readonly">
+        </div>
+
+    <div class="form-group">
+      <label for="city">City</label>
+      <input class="form-control" id="city" value="{{book.cityName}}" readonly="readonly">
+    </div>
+
+    <div class="form-group">
+      <label for="company">Company</label>
+      <input class="form-control" id="company" value="{{book.companyName}}" readonly="readonly">
+         </div>
+
+    <button type="submit" class="btn btn-primary mt-4" [routerLink]="'**'">Back to the books list</button>
+  </form>
+</div>
+</div>

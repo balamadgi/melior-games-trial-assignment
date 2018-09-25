@@ -1,0 +1,35 @@
+<div *ngIf="!isLoad">Loading... </div>
+<div *ngIf="isLoad">
+	<div class="container">
+		<h3 class="text-center">List Of Books</h3>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Автор</th>
+					<th>Название</th>
+					<th>Кол-во страниц</th>
+					<th>Страна</th>
+					<th>Город</th>
+					<th>Компания</th>
+					<th>Цена</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let e of books ; let index = index"  class="clickable"
+				[routerLink]="['/book', e.id]">
+					<th scope="row">{{index + 1}}</th>
+					<td>{{e.author}}</td>
+					<td>{{e.title}}</td>
+					<td>{{e.pages}}</td>
+					<td>{{e.countryName}}</td>
+					<td>{{e.cityName}}</td>
+					<td>{{e.companyName}}</td>
+					<td>{{e.price}}</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

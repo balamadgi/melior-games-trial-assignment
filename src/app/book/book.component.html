@@ -1,0 +1,112 @@
+<div class="form-wrapper">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <h3 class="mb-4">Book Info</h3>
+
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input class="form-control" id="author" formControlName="author">
+			<span class="form-help-text"
+			*ngIf="form.get('author').touched && form.get('author').value == ''">
+	Данное поле не может быть пустым  </span>
+		</div>
+
+    <div class="form-group">
+      <label for="title">Title</label>
+			<input class="form-control" id="title" formControlName="title">
+			<span class="form-help-text"
+			*ngIf="form.get('title').value == '' && form.get('title').touched">
+	Данное поле не может быть пустым  </span>
+		</div>
+		
+
+    <div class="form-group">
+      <label for="isbn">ISBN</label>
+			<input class="form-control" id="isbn" formControlName="isbn">
+			<span class="form-help-text"
+			*ngIf="form.get('isbn').value == '' && form.get('isbn').touched">
+	Данное поле не может быть пустым  </span>
+    </div>
+
+    <div class="form-group">
+      <label for="pages">Number of Pages</label>
+			<input class="form-control" id="pages" formControlName="numOfPages">
+			<span *ngIf="form.get('numOfPages').touched">
+				<span class="form-help-text"
+							*ngIf="+(form.get('numOfPages').value) <= 0">Количество страниц должен быть больше 0</span>
+			</span>
+			<span class="form-help-text"
+			*ngIf="form.get('numOfPages').value == '' && form.get('numOfPages').touched">
+	Данное поле не может быть пустым  </span>
+    </div>
+
+    <div class="form-group">
+      <label for="format">Format</label>
+      <select class="form-control" id="format" formControlName="format">
+        <option>Paperback</option>
+        <option>Hardcover</option>
+        <option>Audiobook</option>
+        <option>Leather Bound</option>
+        <option>Spiral Bound</option>
+			</select>
+			<span class="form-help-text"
+			*ngIf="form.get('format').value == '' && form.get('format').touched">
+	Данное поле не может быть пустым  </span>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" rows="3" formControlName="description"></textarea>
+			<span class="form-help-text"
+			*ngIf="form.get('description').value == '' && form.get('description').touched">
+	Данное поле не может быть пустым  </span>
+		</div>
+
+    <div class="form-group" >
+      <label for="price">Price</label>
+			<input class="form-control" id="price" formControlName="price">
+			<span *ngIf="form.get('price').touched">
+				<span class="form-help-text"
+							*ngIf="+(form.get('price').value) <= 0">Цена должен быть больше 0</span>
+			</span>
+			<span class="form-help-text"
+			*ngIf="form.get('price').value == '' && form.get('price').touched">
+	Данное поле не может быть пустым  </span>
+    </div>
+
+    <hr class="m-1 mb-5 mt-5">
+
+    <h3 class="mb-4">Publisher Info</h3>
+
+    <div class="form-group">
+      <label for="country">Country</label>
+      <select class="form-control" id="country" formControlName="country">
+        <option *ngFor="let c of countries">{{c.name}}</option>
+       
+			</select>
+			<span class="form-help-text"
+			*ngIf="form.get('country').touched && form.get('country').value == ''">
+	Данное поле не может быть пустым  </span>
+    </div>
+
+    <div class="form-group">
+      <label for="city">City</label>
+      <select class="form-control" id="city" formControlName="city">
+        <option *ngFor="let c of cities">{{c.name}}</option>       
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="company">Company</label>
+      <select class="form-control" id="company" formControlName="company">
+        <option *ngFor="let c of companies">{{c.name}}</option>
+       
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-4" >Submit</button>
+
+  </form>
+
+</div>
